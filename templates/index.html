@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yurak Kasalligi Bashorati</title>
+</head>
+<body>
+    <h2>Yurak Kasalligi Bor-yo'qligini Bashorat qilish</h2>
+    <form action="/predict" method="POST">
+        <label>Yosh:</label><input type="number" name="age" required><br>
+        <label>Jins (1 - Erkak, 0 - Ayol):</label><input type="number" name="sex" required><br>
+        <label>Ko'krak og'rig'i turi:</label><input type="number" name="cp" required><br>
+        <label>Qon bosimi:</label><input type="number" name="trestbps" required><br>
+        <label>Xolesterin:</label><input type="number" name="chol" required><br>
+        <label>Qondagi shakar darajasi (1 - yuqori, 0 - past):</label><input type="number" name="fbs" required><br>
+        <label>EKG natijasi:</label><input type="number" name="restecg" required><br>
+        <label>Eng yuqori yurak urish tezligi:</label><input type="number" name="thalach" required><br>
+        <label>Mashq paytida og'riq (1 - bor, 0 - yo'q):</label><input type="number" name="exang" required><br>
+        <label>ST tushishi:</label><input type="text" name="oldpeak" required><br>
+        <label>ST segmenti moyilligi:</label><input type="number" name="slope" required><br>
+        <label>Asosiy tomirlar soni:</label><input type="number" name="ca" required><br>
+        <label>Thalassemia testi:</label><input type="number" name="thal" required><br>
+        <input type="submit" value="Bashorat qilish">
+    </form>
+
+    {% if prediction_text %}
+        <h3>Natija: {{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
